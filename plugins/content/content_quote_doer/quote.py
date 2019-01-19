@@ -18,8 +18,8 @@ class QuoteDoerPlugin(CommandPlugin):
 
         super().__init__(*commands, prefixes=prefixes, strict=strict)
 
-        self.q = Image.open(self.get_path("q.png")).resize((40, 40), Image.LANCZOS)
-        self.qf = self.q.copy().transpose(Image.FLIP_LEFT_RIGHT).transpose(Image.FLIP_TOP_BOTTOM)
+ 
+       
 
         self.f = ImageFont.truetype(self.get_path("font.ttf"), 24)
         self.fs = ImageFont.truetype(self.get_path("font.ttf"), 16)
