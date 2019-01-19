@@ -126,7 +126,7 @@ class QuoteDoerPlugin(CommandPlugin):
         async with aiohttp.ClientSession() as sess:
             async with sess.get(url) as response:
                 img = Image.open(io.BytesIO(await response.read()))
-                img = img.resize((200, 200), Image.NEAREST)
+                img = img.resize((700, 400), Image.NEAREST)
 
         result = await self.run_in_executor(self.make_image, img, text, name, last_name, timestamp, otext)
 
