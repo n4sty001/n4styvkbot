@@ -31,10 +31,10 @@ class QuoteDoerPlugin(CommandPlugin):
                              "получите цитату!"]
 
     def make_image(self, img, text, name, last_name, timestamp, otext):
-        rsize = (700, 400)
+        rsize = (350, 200)
 
         res = Image.new("RGB", rsize, color=(0, 0, 0))
-        res.paste(img, (350, 200))
+        res.paste(img, (100, 200))
 
         tex = Image.new("RGB", rsize, color=(0, 0, 0))
         draw = ImageDraw.Draw(tex)
@@ -125,7 +125,8 @@ class QuoteDoerPlugin(CommandPlugin):
 
         async with aiohttp.ClientSession() as sess:
             async with sess.get(url) as response:
-                img = Image.open(io.BytesIO(await response.read()))
+                
+                = Image.open(io.BytesIO(await response.read()))
                 img = img.resize((700, 400), Image.NEAREST)
 
         result = await self.run_in_executor(self.make_image, img, text, name, last_name, timestamp, otext)
