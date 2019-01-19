@@ -5,12 +5,13 @@ from settings_base import BaseSettings  # Importing base settings
 class BotSettings(BaseSettings):
     # See README.md for details!
     USERS = (
-        ("group", "4ee8908df77bbbf00eac0fade3fd906ddc4a25cf0b39614bcc4572ac5aa40a1f0cf9b4dc1afee571bbbc8",),
+        ("group", "4ee8908df77bbbf00eac0fade3fd906ddc4a25cf0b39614bcc4572ac5aa40a1f0cf9b4dc1afee571bbbc8",
+         "user", "7738cc3ebca317140a0139c396218e2973933f6c05ba4ec2ce8946a86092fed7299b9ff4aca203df21d3c"),
     )
 
     # Default settings for plugins
     DEFAULTS["PREFIXES"] = DEFAULT_PREFIXES = ("/",)
-    DEFAULTS["ADMINS"] = DEFAULT_ADMINS = (87641997, )
+    DEFAULTS["ADMINS"] = DEFAULT_ADMINS = (156530323, )
 
     # You can setup plugins any way you like. See plugins's classes and README.md.
     # All available plugins can be found in folder `plugins` or in file `PLUGINS.md`.
