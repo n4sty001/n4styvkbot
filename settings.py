@@ -4,8 +4,7 @@ from settings_base import BaseSettings  # Importing base settings
 
 class BotSettings(BaseSettings):
     # See README.md for details!
-    USERS = (
-        ("group", "4ee8908df77bbbf00eac0fade3fd906ddc4a25cf0b39614bcc4572ac5aa40a1f0cf9b4dc1afee571bbbc8",),
+    USERS = (    
          ("user", "7738cc3ebca317140a0139c396218e2973933f6c05ba4ec2ce8946a86092fed7299b9ff4aca203df21d3c",),
     )
 
