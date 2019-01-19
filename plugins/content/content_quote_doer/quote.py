@@ -34,7 +34,7 @@ class QuoteDoerPlugin(CommandPlugin):
         rsize = (700, 400)
 
         res = Image.new("RGB", rsize, color=(0, 0, 0))
-        res.paste(img, (25, 150))
+        res.paste(img, (100, 100))
 
         tex = Image.new("RGB", rsize, color=(0, 0, 0))
         draw = ImageDraw.Draw(tex)
