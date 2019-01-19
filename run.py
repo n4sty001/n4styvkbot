@@ -12,7 +12,7 @@ if __name__ == "__main__":
         from settings import BotSettings
 
     bot = bot.Bot(BotSettings)
-    bot.bots_longpoll_run()
+    bot.longpoll_run()
 
     # Or choose a better way for you:
     # bot.longpoll_run()
