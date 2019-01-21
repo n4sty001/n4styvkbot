@@ -21,6 +21,6 @@ class AboutPlugin(CommandPlugin):
         )
 
     async def process_message(self, msg):
-        message = "Жив"
+        message = "Жыв"
                       
         return await msg.answer(message)
