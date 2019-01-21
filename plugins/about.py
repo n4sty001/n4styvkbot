@@ -8,7 +8,7 @@ class AboutPlugin(CommandPlugin):
         """Answers with information about bot."""
 
         if not commands:
-            commands= ("о боте",)
+            commands= ("alive",)
 
         super().__init__(*commands, prefixes=prefixes, strict=strict)
 
@@ -21,6 +21,6 @@ class AboutPlugin(CommandPlugin):
         )
 
     async def process_message(self, msg):
-        message = "hallo"
+        message = "Жив"
                       
         return await msg.answer(message)
