@@ -20,7 +20,7 @@ class AboutPlugin(CommandPlugin):
             f"{self.command_example()} - вывести информацию."
         )
 
-    async def process_message(self, msg):
+    async def process_message(msg):
         message = "Жыв"
                       
         return await msg.answer(message)
