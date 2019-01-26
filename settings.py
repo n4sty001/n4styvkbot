@@ -15,7 +15,7 @@ class BotSettings(BaseSettings):
     # You can setup plugins any way you like. See plugins's classes and README.md.
     # All available plugins can be found in folder `plugins` or in file `PLUGINS.md`.
     # Bot will use all plugins inside PLUGINS variable.
-    help_plugin = HelpPlugin("помощь", "команды", "?", prefixes=DEFAULT_PREFIXES)
+    help_plugin = HelpPlugin("pomogi", "pojalysto", "netgiorp", prefixes=DEFAULT_PREFIXES)
 
     # List of active plugins
     PLUGINS = (
@@ -43,7 +43,7 @@ class BotSettings(BaseSettings):
         MemeDoerPlugin(),
         QRCodePlugin(),
         ChatKickerPlugin(admins_only=True),
-        RandomPostPlugin({"random": -174568284,
+        RandomPostPlugin({"папуг2": -174568284,
             "savehouse": -174568284, "octavia": -174568284}),
         CalculatorPlugin(),
         VideoPlugin(),
