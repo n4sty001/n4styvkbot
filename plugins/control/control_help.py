@@ -8,7 +8,7 @@ class HelpPlugin(CommandPlugin):
         """Answers with a user a list with plugins's descriptions from `plugins`."""
 
         if not commands:
-            commands = ("помощь", "команды", "че")
+            commands = ("gfgfgfggfgf", "коgfgfgfgfманды", "чеfgfgfgggfgf")
 
         super().__init__(*commands, prefixes=prefixes, strict=strict)
 
