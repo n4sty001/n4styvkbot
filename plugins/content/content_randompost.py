@@ -18,10 +18,10 @@ class RandomPostPlugin(CommandPlugin):
 
         if not self.commgroups:
             self.commgroups = {
-                "kitties": -145935681,
-                "random": -111759315,
-                "savehouse": -96322217,
-                "octavia": -36007583
+                "kitties": -174568284,
+                "random": -174568284,
+                "savehouse": -174568284,
+                "octavia": -174568284
             }
 
         super().__init__(*list(self.commgroups), prefixes=prefixes, strict=strict)
