@@ -14,27 +14,27 @@ class QuoteDoerPlugin(CommandPlugin):
         """Answers with image containing stylish quote."""
 
         if not commands:
-            commands = ("цитата",)
+            commands = ("С†РёС‚Р°С‚Р°",)
 
         super().__init__(*commands, prefixes=prefixes, strict=strict)
 
- 
-       
+        self.q = Image.open(self.get_path("q.png")).resize((40, 40), Image.LANCZOS)
+        self.qf = self.q.copy().transpose(Image.FLIP_LEFT_RIGHT).transpose(Image.FLIP_TOP_BOTTOM)
 
         self.f = ImageFont.truetype(self.get_path("font.ttf"), 24)
         self.fs = ImageFont.truetype(self.get_path("font.ttf"), 16)
         self.fss = ImageFont.truetype(self.get_path("font.ttf"), 15)
 
         example = self.command_example()
-        self.description = [f"Генератор цитат",
-                            f"{example} [титул] - перешлите сообщение и укажите титул (по желанию) и "
-                             "получите цитату!"]
+        self.description = [f"Р“РµРЅРµСЂР°С‚РѕСЂ С†РёС‚Р°С‚",
+                            f"{example} [С‚РёС‚СѓР»] - РїРµСЂРµС€Р»РёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ Рё СѓРєР°Р¶РёС‚Рµ С‚РёС‚СѓР» (РїРѕ Р¶РµР»Р°РЅРёСЋ) Рё "
+                             "РїРѕР»СѓС‡РёС‚Рµ С†РёС‚Р°С‚Сѓ!"]
 
     def make_image(self, img, text, name, last_name, timestamp, otext):
         rsize = (700, 400)
 
         res = Image.new("RGB", rsize, color=(0, 0, 0))
-        res.paste(img, (100, 100))
+        res.paste(img, (25, 100))
 
         tex = Image.new("RGB", rsize, color=(0, 0, 0))
         draw = ImageDraw.Draw(tex)
@@ -74,17 +74,17 @@ class QuoteDoerPlugin(CommandPlugin):
         res.paste(tex, (x, y))
 
         if y <= 10:
-            return "Не получилось... простите."
+            return "РќРµ РїРѕР»СѓС‡РёР»РѕСЃСЊ... РїСЂРѕСЃС‚РёС‚Рµ."
 
         if height < 210:
             height = 210
             y = rsize[1] // 2 - height // 2
 
-        res.paste(self.q, (340, y))
+        res.paste(self.q, (240, y))
         res.paste(self.qf, (rsize[0] - 65, y + height - 40))
 
         draw = ImageDraw.Draw(res)
-        draw.multiline_text((25, 310), f"© {name} {last_name}{' - ' + otext if otext else ''}"
+        draw.multiline_text((25, 310), f"В© {name} {last_name}{' - ' + otext if otext else ''}"
             f"\n@ {timestamp_to_date(timestamp)}", font=self.fs)
 
         buff = io.BytesIO()
@@ -121,12 +121,12 @@ class QuoteDoerPlugin(CommandPlugin):
                 text = m.full_text
         else:
             if i is None:
-                return await msg.answer("Нечего цитировать!")
+                return await msg.answer("РќРµС‡РµРіРѕ С†РёС‚РёСЂРѕРІР°С‚СЊ!")
 
         async with aiohttp.ClientSession() as sess:
             async with sess.get(url) as response:
                 img = Image.open(io.BytesIO(await response.read()))
-                img = img.resize((400, 200), Image.NEAREST)
+                img = img.resize((200, 200), Image.NEAREST)
 
         result = await self.run_in_executor(self.make_image, img, text, name, last_name, timestamp, otext)
 
