@@ -14,7 +14,7 @@ class QuoteDoerPlugin(CommandPlugin):
         """Answers with image containing stylish quote."""
 
         if not commands:
-            commands = ("С†РёС‚Р°С‚Р°",)
+            commands = ("цитата",)
 
         super().__init__(*commands, prefixes=prefixes, strict=strict)
 
@@ -26,9 +26,9 @@ class QuoteDoerPlugin(CommandPlugin):
         self.fss = ImageFont.truetype(self.get_path("font.ttf"), 15)
 
         example = self.command_example()
-        self.description = [f"Р“РµРЅРµСЂР°С‚РѕСЂ С†РёС‚Р°С‚",
-                            f"{example} [С‚РёС‚СѓР»] - РїРµСЂРµС€Р»РёС‚Рµ СЃРѕРѕР±С‰РµРЅРёРµ Рё СѓРєР°Р¶РёС‚Рµ С‚РёС‚СѓР» (РїРѕ Р¶РµР»Р°РЅРёСЋ) Рё "
-                             "РїРѕР»СѓС‡РёС‚Рµ С†РёС‚Р°С‚Сѓ!"]
+        self.description = [f"Генератор цитат",
+                            f"{example} [титул] - перешлите сообщение и укажите титул (по желанию) и "
+                             "получите цитату!"]
 
     def make_image(self, img, text, name, last_name, timestamp, otext):
         rsize = (700, 400)
@@ -74,7 +74,7 @@ class QuoteDoerPlugin(CommandPlugin):
         res.paste(tex, (x, y))
 
         if y <= 10:
-            return "РќРµ РїРѕР»СѓС‡РёР»РѕСЃСЊ... РїСЂРѕСЃС‚РёС‚Рµ."
+            return "Не получилось... простите."
 
         if height < 210:
             height = 210
@@ -84,7 +84,7 @@ class QuoteDoerPlugin(CommandPlugin):
         res.paste(self.qf, (rsize[0] - 65, y + height - 40))
 
         draw = ImageDraw.Draw(res)
-        draw.multiline_text((25, 310), f"В© {name} {last_name}{' - ' + otext if otext else ''}"
+        draw.multiline_text((25, 310), f"© {name} {last_name}{' - ' + otext if otext else ''}"
             f"\n@ {timestamp_to_date(timestamp)}", font=self.fs)
 
         buff = io.BytesIO()
@@ -121,7 +121,7 @@ class QuoteDoerPlugin(CommandPlugin):
                 text = m.full_text
         else:
             if i is None:
-                return await msg.answer("РќРµС‡РµРіРѕ С†РёС‚РёСЂРѕРІР°С‚СЊ!")
+                return await msg.answer("Нечего цитировать!")
 
         async with aiohttp.ClientSession() as sess:
             async with sess.get(url) as response:
