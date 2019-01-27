@@ -9,7 +9,7 @@ class BotSettings(BaseSettings):
     )
 
     # Default settings for plugins
-    DEFAULTS["PREFIXES"] = DEFAULT_PREFIXES = ("/",)
+    DEFAULTS["PREFIXES"] = DEFAULT_PREFIXES = ("/","@",)
     DEFAULTS["ADMINS"] = DEFAULT_ADMINS = (156530323, )
 
     # You can setup plugins any way you like. See plugins's classes and README.md.
@@ -43,7 +43,7 @@ class BotSettings(BaseSettings):
         MemeDoerPlugin(),
         QRCodePlugin(),
         ChatKickerPlugin(admins_only=True),
-        RandomPostPlugin({"@keypuga папуг2": -174568284,
+        RandomPostPlugin({"@keypuga папуг2","папуг2",: -174568284,
             "savehouse": -174568284, "octavia": -174568284}),
         CalculatorPlugin(),
         VideoPlugin(),
