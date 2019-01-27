@@ -43,7 +43,7 @@ class BotSettings(BaseSettings):
         MemeDoerPlugin(),
         QRCodePlugin(),
         ChatKickerPlugin(admins_only=True),
-        RandomPostPlugin({"/папуг2": -174568284,
+        RandomPostPlugin({"F папуг2": -174568284,
             "savehouse": -174568284, "octavia": -174568284}),
         CalculatorPlugin(),
         VideoPlugin(),
