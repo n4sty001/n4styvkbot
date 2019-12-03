@@ -1,21 +1,21 @@
-﻿from plugins import *  # Importing all the plugins from plugins/ folder
+from plugins import *  # Importing all the plugins from plugins/ folder
 from settings_base import BaseSettings  # Importing base settings
 
 
 class BotSettings(BaseSettings):
     # See README.md for details!
-    USERS = (    
-         ("user", "4765d9ec5d4a3d2c532048dcff13940ecdfad61f9e2ac70407c180aaa4cd2092c4c7aff3796d3f52f3b89",),
+    USERS = (
+        ("user", "ТУТ ТОКЕН ПОЛЬЗОВАТЕЛЯ",),
     )
 
     # Default settings for plugins
-    DEFAULTS["PREFIXES"] = DEFAULT_PREFIXES = ("/","@",)
-    DEFAULTS["ADMINS"] = DEFAULT_ADMINS = (156530323, )
+    DEFAULTS["PREFIXES"] = DEFAULT_PREFIXES = ("/",)
+    DEFAULTS["ADMINS"] = DEFAULT_ADMINS = (87641997, )
 
     # You can setup plugins any way you like. See plugins's classes and README.md.
     # All available plugins can be found in folder `plugins` or in file `PLUGINS.md`.
     # Bot will use all plugins inside PLUGINS variable.
-    help_plugin = HelpPlugin("pomogi", "pojalysto", "netgiorp", prefixes=DEFAULT_PREFIXES)
+    help_plugin = HelpPlugin("помощь", "команды", "?", prefixes=DEFAULT_PREFIXES)
 
     # List of active plugins
     PLUGINS = (
@@ -43,8 +43,8 @@ class BotSettings(BaseSettings):
         MemeDoerPlugin(),
         QRCodePlugin(),
         ChatKickerPlugin(admins_only=True),
-        RandomPostPlugin({"папуг2": -174568284,
-            "savehouse": -174568284, "octavia": -174568284}),
+        RandomPostPlugin({"random": -111759315,
+            "savehouse": -96322217, "octavia": -36007583}),
         CalculatorPlugin(),
         VideoPlugin(),
         DispatchPlugin(),

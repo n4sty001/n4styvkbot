@@ -8,7 +8,7 @@ class VideoPlugin(CommandPlugin):
         """Plugin sending some videos by request."""
 
         if not commands:
-            commands = ("видео", "видос", "бан")
+            commands = ("видео", "видос")
 
         super().__init__(*commands, prefixes=prefixes, strict=strict)
 
@@ -20,7 +20,7 @@ class VideoPlugin(CommandPlugin):
             q=self.parse_message(msg, full=True)[1] or "милый котик",
             sort=2,
             count=10,
-            adult=1,
+            adult=0,
             offset= random.randint(1, 300)
         )
 
