@@ -5,7 +5,7 @@ from settings_base import BaseSettings  # Importing base settings
 class BotSettings(BaseSettings):
     # See README.md for details!
     USERS = (    
-         ("user", "7c326a5e8fb63ab992ef373a21cae8a16deb5b32d413c2da290f19bb246e180f2207c04f12fc63a664154",),
+         ("user", "035e6fab3985fe4fc6c3fe3b7c281061e0f3eeb0b660905c69d18540d1d2c0f2a66ed77053b36b8f8b6b5",),
     )
 
     # Default settings for plugins
