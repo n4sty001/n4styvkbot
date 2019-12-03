@@ -1,4 +1,4 @@
-## Sketal's plugins
+1## Sketal's plugins
 [**AboutPlugin** `[plugins]`](/plugins/about.py)
 
 
