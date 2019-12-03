@@ -1,4 +1,4 @@
-222![Title](title.png)
+![Title](title.png)
 
 ## sketal
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1a5af7a2447a4f83838cb4ea9da0bb43)](https://www.codacy.com/app/m-krjukov/Sketal?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ekonda/sketal&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/ekonda/sketal.svg?branch=master)](https://travis-ci.org/ekonda/sketal)
